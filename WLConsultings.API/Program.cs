@@ -6,7 +6,9 @@ using System.Text;
 using WLConsultings.Application.Interfaces;
 using WLConsultings.Application.Services;
 using WLConsultings.Domain.Core.Interfaces.Repositorys;
+using WLConsultings.Domain.Core.Interfaces.Services;
 using WLConsultings.Domain.Entities;
+using WLConsultings.Domain.Services;
 using WLConsultings.Infrastructure.Data;
 using WLConsultings.Infrastructure.Data.Repositorys;
 
@@ -41,6 +43,10 @@ builder.Services.AddAuthentication(options =>
 //Services
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IWalletRepository, WalletRepository>();
+builder.Services.AddScoped<IWalletService, WalletService>();
+builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
+
 
 
 // Controllers + Swagger
